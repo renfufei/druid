@@ -26,7 +26,7 @@ import com.alibaba.druid.sql.dialect.mysql.ast.MySqlObject;
 import com.alibaba.druid.sql.dialect.mysql.visitor.MySqlASTVisitor;
 import com.alibaba.druid.sql.dialect.oracle.ast.stmt.OracleSelectQueryBlock;
 import com.alibaba.druid.sql.visitor.SQLASTVisitor;
-import oracle.sql.SQLUtil;
+import com.alibaba.druid.util.JdbcConstants;
 
 public class MySqlSelectQueryBlock extends SQLSelectQueryBlock implements MySqlObject {
     private boolean              hignPriority;
@@ -42,7 +42,7 @@ public class MySqlSelectQueryBlock extends SQLSelectQueryBlock implements MySqlO
     private List<SQLCommentHint> hints;
 
     public MySqlSelectQueryBlock(){
-
+        dbType = JdbcConstants.MYSQL;
     }
 
     public MySqlSelectQueryBlock clone() {
